@@ -1,7 +1,7 @@
-fun main(args: Array<String> = arrayOf("x+4=12-x")) {
+fun main(args: Array<String>) {
     val tree = createTree(args[0])
     val totalUnknownSum = findTotalUnknowns(tree!!.left) - findTotalUnknowns(tree!!.right)
-    val totalKnownSum = findTotalValues(tree!!.left) - findTotalValues(tree!!.right)
+    val totalKnownSum = findTotalValues(tree!!.right) - findTotalValues(tree!!.left)
     val result = totalKnownSum / totalUnknownSum
     println("x=$result")
 }
